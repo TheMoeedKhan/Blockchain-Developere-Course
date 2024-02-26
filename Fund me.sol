@@ -1,3 +1,4 @@
+// Example of Crowdsourcing or Fund raising Contract
 // Get Funds from User
 // Withdraw Funds
 // Set a minimum funding amount in USD.
