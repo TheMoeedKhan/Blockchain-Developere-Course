@@ -1,30 +1,17 @@
-// Example of Crowdsourcing or Fund raising Contract
-// Get Funds from User
-// Withdraw Funds
-// Set a minimum funding amount in USD.
-
-
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
-contract FundMe{
+contract Fundme{
+    
+    uint public minimumUSD = 5; 
 
-    uint public minUSD = 5;
+    function fund() public payable {    //call to send money to our contract
 
-    uint public Value;
-    function Fund() public payable {
-        Value = msg.value;
-        require(msg.value >= minUSD, "Not Transacted Enough");
+    require(msg.value >= minimumUSD, "Transaction failed");
     }
 
-    //function Withdraw() public {}
+    // function withdraw() public {      //to withdraw funds
 
-    function $EthPrice() public {
-        //address 0x694AA1769357215DE4FAC081bf1f309aDC325306
-        //ABI
-    }
-
-    function getConversionRate() public {
-
-    }
+    // }
 }
