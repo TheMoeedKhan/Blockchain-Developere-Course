@@ -6,10 +6,16 @@ import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/Ag
 contract Fundme {
     uint256 public minimumUSD = 5;
 
+    address[] public funders;
+    mapping (address funders => uint256 amountFunded) public addressToAmountFunded;
+
     function fund() public payable {
         //call to send money to our contract
 
         require(GetConversionRate(msg.value) >= minimumUSD, "Transaction failed: Did'nt Send Enough ETH");
+        funders.push(msg.sender);
+        addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
+
     }
 
     // function withdraw() public {}    //to withdraw funds
