@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract Fundme {
-    uint256 public minimumUSD = 5e18;
+    uint256 public minimumUSD = 5;
 
     function fund() public payable {
         //call to send money to our contract
